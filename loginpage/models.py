@@ -10,6 +10,7 @@ class RegisterUser(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     image_url = models.ImageField(blank=True)
     
+    
     def __str__(self):
         return self.username
     def upload(self):
