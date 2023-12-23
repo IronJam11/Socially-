@@ -34,7 +34,7 @@ class Sample(models.Model):
 class Blog(models.Model):
     type = models.CharField(max_length=25)
     title = models.CharField(max_length=100)
-    content = models.CharField(max_length=200)
+    content = models.CharField(max_length=1000)
     published_date = models.DateTimeField(blank=True,null = True)
     
 class Post(models.Model):

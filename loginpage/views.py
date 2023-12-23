@@ -76,5 +76,13 @@ def blog_edit(request):
 def post_list(request):
     return render(request,"post_list.html",{})
 
+def delete_blog(request,pk):
+    blog = get_object_or_404(Blog, pk=pk)
+    blog.delete()
+    blogs = Blog.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request,"blog_list.html",{'blogs':blogs})
+    
+    
+
 
     
